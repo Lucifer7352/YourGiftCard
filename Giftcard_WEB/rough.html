@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiftCard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: rgb(44, 22, 215);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .brand {
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 5px;
+            left: 20px;
+            -webkit-text-stroke: 1px rgb(183, 17, 198);
+            font: 700 normal 'tahoma';
+            text-shadow: 5px 5px red;
+            animation: glow .5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 10 10 20px #05fc9d;
+            }
+            to {
+                text-shadow: 0 0 10px #00fc2e, 0 0 20px rgb(0, 0, 251);
+            }
+        }
+
+        .search-box {
+            flex-grow: 1;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border: none;
+            width: 80%;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .nav-btn {
+            padding: 15px 20px;
+            margin-right: 15px;
+            font-size: 20px;
+            background-color: white;
+            color: blueviolet;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-left: 1px;
+            border: 2px solid black;
+            box-shadow: 1px 1px gray;
+            transition: 1s;
+        }
+
+        .nav-btn:hover {
+            scale: 1.1;
+            border-radius: 20px;
+            opacity: 0.5;
+            color: rgb(222, 6, 78);
+        }
+
+        .Videos {
+            background: linear-gradient(to right, #2c5364, #0f2027);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .slider {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(1000px) rotateY(360deg);
+            }
+        }
+
+        .slider span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i) * 45deg));
+        }
+
+        .slider span video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 100px; /* Corrected value */
+            object-fit: cover;
+            transition: 2s;
+        }
+
+        .slider:hover video {
+            transform: translateY(-20px) scale(1.2); /* Adjusted translateY value */
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nagivation-bar">
+    <span class="brand">NepGiftCard</span>
+    <div class="search-box">
+        <input type="text" placeholder="Search....">
+    </div>
+    <div class="buttons"></div>
+    <a href="#" class="nav-btn">Home</a>
+    <a href="#" class="nav-btn">Contact</a>
+    <a href="#" class="nav-btn">Orders</a>
+    <a href="#" class="nav-btn">Account</a>
+    <a href="#" class="nav-btn">Cart</a>
+</nav>
+
+<section class="Videos">
+    <div class="slider">
+        <span style="--i:1;">
+            <video autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                <source src="/images/Call_Of_Duty.mp4" type="video/mp4">
+            </video>
+        </span>
+
+        <span style="--i:2;">
+            <video autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                <source src="/images/EN.mp4" type="video/mp4">
+            </video>
+        </span>
+
+        <span style="--i:3;">
+            <video autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                <source src="/images/COC2.mp4" type="video/mp4">
+            </video>
+        </span>
+
+        <span style="--i:4;">  
+            <video autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                <source src="/images/FFO OB41 Store Listing Update _ Free Fire Official.mp4" type="video/mp4">
+            </video>
+        </span>
+
+        <span style="--i:5;">  
+            <video autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                <source src="/images/English AppAgent apppreview 30s 16x9 UA 1.mp4" type="video/mp4">
+            </video>
+        </span>  
+    </div>
+</section>
+
+
+
+
+</body>
+</html>
